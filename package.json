@@ -49,7 +49,7 @@
     "build-storybook": "storybook build",
     "clean": "rimraf dist/",
     "copyfiles": "copyfiles -u 1 src/**/*.css dist/",
-    "push:npm": "np -- --yolo",
+    "push:npm": "np",
     "test": "echo \"no test specified\" && exit 0",
     "semantic-release": "semantic-release"
   },
