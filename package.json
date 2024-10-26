@@ -1,8 +1,36 @@
 {
-  "name": "nesa",
+  "name": "nesa-ui-library",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0,1",
   "type": "module",
+  "keywords": [
+    "nesa",
+    "ui",
+    "library",
+    "storybook",
+    "vite",
+    "react",
+    "typescript",
+    "development",
+    "sftcommunity"
+  ],
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/DavidApril/Nesa",
+    "type": "git"
+  },
+  "file": [
+    "dist/"
+  ],
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
   "scripts": {
     "dev": "npm run storybook",
     "build": "tsc -b && vite build",
@@ -11,11 +39,10 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "@chromatic-com/storybook": "^1.9.0",
     "@eslint/js": "^9.13.0",
     "@storybook/addon-essentials": "^8.3.6",
