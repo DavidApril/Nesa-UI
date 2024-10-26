@@ -18,7 +18,7 @@
   ],
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/DavidApril/Nesa",
+    "url": "git+https://github.com/DavidApril/Nesa.git",
     "type": "git"
   },
   "file": [
