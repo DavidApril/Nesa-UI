@@ -5,7 +5,7 @@ name: Npm Package publish
 
 on:
   release:
-    types: [created]
+    types: [ created ]
   workflow_dispatch:
     inputs:
       logLevel:
@@ -14,9 +14,9 @@ on:
         default: 'warning'
         type: choice
         options:
-        - info
-        - warning
-        - debug
+          - info
+          - warning
+          - debug
       environment:
         description: 'Environment to run tests against'
         type: environment
@@ -26,11 +26,23 @@ jobs:
   publish-npm:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: "lts/*"
           registry-url: https://registry.npmjs.org/
-      - run: npm run push:npm --no-publish
+      - name: Install Dependencies
+        run: npm ci
+      - name: Build Package
+        run: npm run build
+      - name: Publish to NPM
+        uses: actions/upload-artifact@v3
+        with:
+          name: npm-package
+          path: dist/
+      - name: Create npm Release
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
