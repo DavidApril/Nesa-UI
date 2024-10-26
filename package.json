@@ -40,10 +40,7 @@
     "build-storybook": "storybook build",
     "clean": "rimraf dist/"
   },
-  "dependencies": {},
   "devDependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
     "@chromatic-com/storybook": "^1.9.0",
     "@eslint/js": "^9.13.0",
     "@storybook/addon-essentials": "^8.3.6",
