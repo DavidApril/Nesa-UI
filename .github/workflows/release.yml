@@ -1,4 +1,4 @@
-name: Release
+name: Semantic Release
 
 on:
   push:
@@ -34,10 +34,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-        env:
-          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-          ENVIRONMENT: ${{ inputs.environment }}
+          node-version: "lts/*"
       - run: npm ci
-      - run: npm run semantic-release
+      - name: Semantic release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          ENVIRONMENT: ${{ inputs.environment }}
+        run: npm run semantic-release
