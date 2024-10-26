@@ -1,8 +1,10 @@
 {
   "name": "nesa-ui-library",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.1-rc1",
   "type": "module",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "keywords": [
     "nesa",
     "ui",
@@ -31,6 +33,9 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
+  "engines": {
+    "node": ">=14"
+  },
   "scripts": {
     "dev": "npm run storybook",
     "build": " npm run clean && tsc && npm run copyfiles",
@@ -39,7 +44,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "clean": "rimraf dist/",
-    "copyfiles": "copyfiles -u 1 src/**/*.css dist/"
+    "copyfiles": "copyfiles -u 1 src/**/*.css dist/",
+    "push:npm": "np"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.9.0",
@@ -61,6 +67,7 @@
     "eslint-plugin-react-refresh": "^0.4.13",
     "eslint-plugin-storybook": "^0.10.1",
     "globals": "^15.11.0",
+    "np": "^10.0.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "rimraf": "^6.0.1",
