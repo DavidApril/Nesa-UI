@@ -19,6 +19,7 @@ on:
       environment:
         description: 'Environment to run tests against'
         type: environment
+        default: 'Development'
         required: true
 
 permissions:
@@ -37,5 +38,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+          ENVIRONMENT: ${{ inputs.environment }}
       - run: npm ci
       - run: npm run semantic-release
