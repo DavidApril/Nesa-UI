@@ -17,6 +17,9 @@ on:
         - info
         - warning
         - debug
+    environment:
+      name: Development
+      url: https://example.com
 
 jobs:
   publish-npm:
