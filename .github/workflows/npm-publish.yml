@@ -18,8 +18,9 @@ on:
         - warning
         - debug
     environment:
-      name: Development
-      url: https://example.com
+      description: 'Environment to run tests against'
+      type: environment
+      required: true
 
 jobs:
   publish-npm:
