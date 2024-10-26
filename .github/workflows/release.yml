@@ -5,11 +5,22 @@ on:
     branches:
       - main
       - next
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
 
 permissions:
   contents: write
   issues: write
-  pull_requests: write
+  pull-requests: write
 
 jobs:
   release:
