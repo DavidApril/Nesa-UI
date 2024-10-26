@@ -21,7 +21,7 @@
     "url": "git+https://github.com/DavidApril/Nesa-UI.git",
     "type": "git"
   },
-  "file": [
+  "files": [
     "dist/",
     "README.md"
   ],
