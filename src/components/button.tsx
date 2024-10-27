@@ -162,13 +162,22 @@ const styles = {
 }
 
 /**
+ * Sizes for the Button component.
+ */
+const sizes = {
+  sm: 'py-[calc(theme(spacing[1.5])-1px)] px-[calc(theme(spacing[2.5])-1px)] sm:py-[calc(theme(spacing[1.25])-1px)] sm:px-[calc(theme(spacing[2])-1px)]',
+  md: 'py-[calc(theme(spacing[2])-1px)] px-[calc(theme(spacing[3])-1px)] sm:py-[calc(theme(spacing[1.5])-1px)] sm:px-[calc(theme(spacing[2.5])-1px)]',
+  lg: 'py-[calc(theme(spacing[3.5])-1px)] px-[calc(theme(spacing[4])-1px)] sm:py-[calc(theme(spacing[3])-1px)] sm:px-[calc(theme(spacing[3.5])-1px)]',
+}
+
+/**
  * Props for the Button component.
  */
 
 type ButtonProps = (
-  | { color?: keyof typeof styles.colors; outline?: never; plain?: never }
-  | { color?: never; outline: true; plain?: never }
-  | { color?: never; outline?: never; plain: true }
+  | { color?: keyof typeof styles.colors; outline?: never; plain?: never; size?: keyof typeof sizes }
+  | { color?: never; outline: true; plain?: never; size?: keyof typeof sizes }
+  | { color?: never; outline?: never; plain: true; size?: keyof typeof sizes }
   ) & { className?: string; children: React.ReactNode } & (
   | Omit<Headless.ButtonProps, 'className'>
   | Omit<React.ComponentPropsWithoutRef<typeof Link>, 'className'>
@@ -178,21 +187,21 @@ type ButtonProps = (
  * Button component that can render either a link or a button element.
  *
  * @param {ButtonProps} props - The props for the button component.
- * @param {React.ForwardedRef<HTMLElement>} ref - The ref for the button component.
- * @returns {JSX.Element} The rendered button component.
  */
 export const Button = forwardRef(function Button(
-  {color, outline, plain, className, children, ...props}: ButtonProps,
+  {color, outline, plain, size = 'md', className, children, ...props}: ButtonProps,
   ref: React.ForwardedRef<HTMLElement>
 ) {
+
   const classes = clsx(
     className,
     styles.base,
+    sizes[size],
     outline ? styles.outline : plain ? styles.plain : clsx(styles.solid, styles.colors[color ?? 'dark/zinc'])
   )
 
   return 'href' in props ? (
-    <Link {...props} className={classes} ref={ref as React.ForwardedRef<HTMLAnchorElement>}>
+    <Link  {...props} className={classes} ref={ref as React.ForwardedRef<HTMLAnchorElement>}>
       <TouchTarget>{children}</TouchTarget>
     </Link>
   ) : (
