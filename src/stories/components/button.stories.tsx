@@ -1,6 +1,6 @@
-import {Button} from "../../components/button";
 import {Meta, StoryObj} from "@storybook/react";
 import {fn} from "@storybook/test";
+import {Button} from "../../components";
 
 /**
  * Meta configuration for the Button component stories.
@@ -46,10 +46,6 @@ export default meta;
  * Renders a primary button with default arguments.
  */
 export const Default: Story = {
-  args: {
-    size: "sm"
-  },
-
   render: (args) => (<Button {...args}> Primary </Button>)
 };
 /**
