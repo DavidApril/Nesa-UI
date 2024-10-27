@@ -1,1 +1,3 @@
-export {Button, Page, Header} from './stories'
+export {
+  Button, Input, Badge, Checkbox, Divider, StackedLayout, Text, DescriptionList, Alert, Sidebar
+} from './stories/components';
