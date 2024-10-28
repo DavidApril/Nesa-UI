@@ -36,6 +36,7 @@ jobs:
         with:
           node-version: "lts/*"
       - run: npm ci
+      - run: npm run build
       - name: Semantic release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
