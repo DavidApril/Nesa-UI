@@ -22,7 +22,7 @@
     "type": "git"
   },
   "files": [
-    "dist/",
+    "dist",
     "README.md"
   ],
   "publishConfig": {
