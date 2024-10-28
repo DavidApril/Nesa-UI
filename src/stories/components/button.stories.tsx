@@ -1,5 +1,4 @@
 import {Meta, StoryObj} from "@storybook/react";
-import {fn} from "@storybook/test";
 import {Button} from "../../components";
 
 /**
@@ -32,9 +31,6 @@ const meta = {
       },
       options: ['red', 'lime', 'blue', 'dark', 'purple', 'pink', 'zinc', 'amber', 'yellow', 'white', 'cyan', 'violet', 'teal', 'rose', 'orange', 'indigo', 'fuchsia', 'emerald', 'dark/white', 'dark/zinc', 'light'],
     },
-  },
-  args: {
-    onClick: fn()
   },
 } as Meta<typeof Button>;
 type Story = StoryObj<typeof Button>;
