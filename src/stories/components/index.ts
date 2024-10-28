@@ -8,3 +8,4 @@ export {default as Text} from './text.stories';
 export {default as DescriptionList} from './description-list.stories';
 export {default as Alert} from './alert.stories';
 export {default as Sidebar} from './sidebar.stories';
+export {default as SidebarLayout} from './sidebar-layout.stories';

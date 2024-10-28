@@ -1,3 +1,13 @@
 export {
-  Button, Input, Badge, Checkbox, Divider, StackedLayout, Text, DescriptionList, Alert, Sidebar
+  Alert,
+  Badge,
+  Button,
+  Checkbox,
+  DescriptionList,
+  Divider,
+  Input,
+  Sidebar,
+  SidebarLayout,
+  StackedLayout,
+  Text,
 } from './components';
